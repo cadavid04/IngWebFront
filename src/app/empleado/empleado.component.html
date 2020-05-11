@@ -1,0 +1,56 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Registro de Empleados</h4>
+                        <p class="card-category">Empleados</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-body">
+
+                                <mat-form-field appearance="fill">
+                                    <input matInput placeholder="ID Empleado" [(ngModel)]="empleado.id"
+                                           requeried />
+                                </mat-form-field>
+                                <br>
+
+                                <mat-form-field appearance="fill">
+                                    <input matInput placeholder="Nombre" [(ngModel)]="empleado.nombre"
+                                           requeried />
+                                </mat-form-field>
+                                <br>
+                                <mat-form-field appearance="fill">
+                                    <input matInput placeholder="Documento" [(ngModel)]="empleado.documento"
+                                           requeried />
+                                </mat-form-field>
+                                <br>
+                                <mat-form-field appearance="fill">
+                                    <input matInput placeholder="Correo" [(ngModel)]="empleado.correo"
+                                           requeried />
+                                </mat-form-field>
+                                <br>
+                                <mat-form-field appearance="fill">
+                                    <input matInput placeholder="Direccion"  [(ngModel)]="empleado.direccion"
+                                           requeried />
+                                </mat-form-field>
+                                <br>
+
+                                <mat-form-field appearance="fill">
+                                    <input matInput placeholder="Telefono" [(ngModel)]="empleado.telefono"
+                                           requeried />
+                                </mat-form-field>
+                            </div>
+                            </div>
+                        </div>
+
+                </div>
+
+                <button type="button" class="btn btn-outline-dark"
+                        (click)="agregarRegistro(empleado)">Guardar</button>
+            </div>
+        </div>
+    </div>
+

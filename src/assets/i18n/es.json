@@ -1,0 +1,25 @@
+{
+  "HOME": {
+    "TITLE": "Prueba de i18n",
+    "SELECT": "Cambiar Lenguaje",
+    "ETIQUETAGRUPO": "Grupo",
+    "ETIQUETAACTIVIDAD": "Actividad",
+    "ETIQUETAFECHA": "Fecha",
+    "ETIQUETATIEMPO": "Tiempo",
+    "ETIQUETAAGREGAACTIVIDAD": "Agregar actividad",
+    "ETIQUETAREGISTROACTIVIDAD": "Registros de Actividades",
+    "ETIQUETALISTAACTIVIDAD": "Lista de registros de actividades del docente",
+    "ETIQUETAID": "ID",
+    "ETIQUETAIDDOCENTE": "Docente",
+    "ETIQUETAIDGRUPO": "Grupo",
+    "ETIQUETAIDACTIVIDAD": "Actividad",
+    "ETIQUETALISTADOGRUPOS": "Listado de Grupos",
+    "ETIQUETAGRUPOSACTIVOS": "Listado de grupos activos",
+    "ETIQUETAESTADO": "Estado",
+    "ETIQUETADOCENTE": "Docente",
+    "ETIQUETANOMBRE": "Nombre",
+    "ETIQUETAPERIODO": "Periodo",
+    "ETIQUETAGRUPOS": "Grupos",
+    "ETIQUETALISTARGRUPOS": "Listar Grupos"
+  }
+}

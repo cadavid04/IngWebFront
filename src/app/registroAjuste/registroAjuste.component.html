@@ -1,0 +1,48 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Registro de Ajustes de Inventario</h4>
+                        <p class="card-category">Registro de Inventario</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-body">
+                            <div class="col-md-12">
+
+                                <mat-form-field appearance="fill">
+                                    <input matInput placeholder="Nombre Producto" [(ngModel)]="registroAjustes.producto"
+                                           requeried />
+                                </mat-form-field>
+                                <br>
+                                <mat-form-field appearance="fill">
+                                    <input matInput placeholder="Motivo" [(ngModel)]="registroAjustes.motivo"
+                                           requeried />
+                                </mat-form-field>
+                                <br>
+                                <mat-form-field appearance="fill">
+                                    <input matInput placeholder="Cantidad" [(ngModel)]="registroAjustes.cantidad"
+                                           requeried />
+                                </mat-form-field>
+                                <br>
+                                <mat-form-field appearance="fill">
+                                    <input matInput placeholder="Fecha" type="date" [(ngModel)]="registroAjustes.fecha"
+                                           requeried />
+                                </mat-form-field>
+                                <br>
+                                <mat-form-field appearance="fill">
+                                    <input matInput placeholder="Tipo" [(ngModel)]="registroAjustes.tipo" requeried />
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-outline-dark"
+                        (click)="agregarRegistro(registroAjustes)">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+{
+  "HOME": {
+    "TITLE": "Hello Angular with ngx-translate!",
+    "SELECT": "Change language",
+    "ETIQUETAGRUPO": "Group",
+    "ETIQUETAACTIVIDAD": "Activity",
+    "ETIQUETAFECHA": "Date",
+    "ETIQUETATIEMPO": "Time",
+    "ETIQUETAAGREGAACTIVIDAD": "Add new activity",
+    "ETIQUETAREGISTROACTIVIDAD": "Activity records",
+    "ETIQUETALISTAACTIVIDAD": "Add new activity",
+    "ETIQUETAID": "ID",
+    "ETIQUETAIDDOCENTE": "Teacher",
+    "ETIQUETAIDGRUPO": "Group",
+    "ETIQUETAIDACTIVIDAD": "Activity",
+    "ETIQUETALISTADOGRUPOS": "Group List",
+    "ETIQUETAGRUPOSACTIVOS": "Active Group List",
+    "ETIQUETAESTADO": "State",
+    "ETIQUETADOCENTE": "Teacher",
+    "ETIQUETANOMBRE": "Name",
+    "ETIQUETAPERIODO": "Period",
+    "ETIQUETAGRUPOS": "Groups",
+    "ETIQUETALISTARGRUPOS": "List Groups"
+  }
+}

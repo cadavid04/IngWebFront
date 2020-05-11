@@ -1,0 +1,53 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Registro de Empleados</h4>
+                        <p class="card-category">Empleados</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-body">
+
+                                <mat-form-field appearance="fill">
+                                    <input matInput placeholder="ID Venta" [(ngModel)]="venta.id"
+                                           requeried />
+                                </mat-form-field>
+                                <mat-form-field appearance="fill">
+                                    <input matInput placeholder="ID Cliente" [(ngModel)]="venta.idCliente"
+                                           requeried />
+                                </mat-form-field>
+
+                                <mat-form-field appearance="fill">
+                                    <input matInput placeholder="Cliente" [(ngModel)]="venta.cliente"
+                                           requeried />
+                                </mat-form-field>
+
+                                <mat-form-field appearance="fill">
+                                    <input matInput placeholder="Empleado" [(ngModel)]="venta.empleado"
+                                           requeried />
+                                </mat-form-field>
+
+                                <mat-form-field appearance="standard">
+                                    <input matInput placeholder="Fecha" type="date" [(ngModel)]="venta.fecha"
+                                           requeried />
+                                </mat-form-field>
+
+                                <mat-form-field appearance="fill">
+                                    <input matInput placeholder="Valor" [(ngModel)]="venta.valor"
+                                           requeried />
+                                </mat-form-field>
+                            </div>
+                            </div>
+                        </div>
+
+                </div>
+
+                <button type="button" class="btn btn-outline-dark"
+                        (click)="agregarRegistro(venta)">Guardar</button>
+            </div>
+        </div>
+    </div>
+
