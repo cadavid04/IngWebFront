@@ -33,6 +33,7 @@ import {NavbarComponent} from '../../components/navbar/navbar.component';
 import {SidebarComponent} from '../../components/sidebar/sidebar.component';
 import {ComponentsModule} from '../../components/components.module';
 import {AppModule} from '../../app.module';
+import {VentaDetalleComponent} from "../../ventaDetalle/ventaDetalle.component";
 
 
 
@@ -65,7 +66,8 @@ import {AppModule} from '../../app.module';
     ReporteComponent,
     EmpleadoComponent,
     UsuarioComponent,
-    VentaComponent]
+    VentaComponent,
+    VentaDetalleComponent]
 })
 
 export class AdminLayoutModule {}

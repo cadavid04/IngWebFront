@@ -3,7 +3,7 @@ import {VentaDTO} from '../ventaDTO';
 import {VentaService} from '../venta.service';
 
 @Component({
-  selector: 'app-empleado',
+  selector: 'app-venta',
   templateUrl: './venta.component.html',
   styleUrls: ['./venta.component.css']
 })
