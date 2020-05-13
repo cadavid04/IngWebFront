@@ -3,8 +3,8 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import {MessageService} from './message.service';
 import {VentaDTO} from './ventaDTO';
-import {ProductoService} from './producto.service';
 import {ProductoDTO} from './productoDTO';
+import {catchError, tap} from 'rxjs/operators';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -13,25 +13,20 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class VentaService{
-  productos: ProductoDTO[];
+export class ProductoService{
   constructor(
       private http: HttpClient,
-      private messageService: MessageService,
-      private productoService: ProductoService) { }
+      private messageService: MessageService) { }
 
 
-  agregarRegistro(ventaDTO: VentaDTO) {
-    console.log(ventaDTO)
-    return this.http.post<VentaDTO>( 'http://localhost:8080/ingweb-api/ventas', ventaDTO, httpOptions)/*.pipe(
-        tap((newHero: RegistroActividadDTO) => this.log(`added usuario w/ id=${newusuario.id}`)),
-        catchError(this.handleError<UsuarioDTO>('agregarRegistro'))
-    );*/.subscribe();
+  getProductos(): Observable<ProductoDTO[]> {
+    return this.http.get<ProductoDTO[]>('http://localhost:8080/ingweb-api/productos')
+        .pipe(
+            tap(_ => this.log('fetched productos')),
+            catchError(this.handleError<ProductoDTO[]>('getProductos', []))
+        );
   }
-  getProductos(): void {
-    this.productoService.getProductos()
-        .subscribe(Productos => this.productos = Productos);
-  }
+
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
@@ -49,6 +44,6 @@ export class VentaService{
 
 
   private log(message: string) {
-    this.messageService.add(`EmpleadoService: ${message}`);
+    this.messageService.add(`ProductoService: ${message}`);
   }
 }
