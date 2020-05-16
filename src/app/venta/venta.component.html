@@ -59,7 +59,8 @@
                                     </div>
                                 <div class="col-md-4">
                                 <button type="button" class="btn btn-outline-dark"
-                                        (click)="agregarRegistro(venta)">Agregar</button>
+
+                                        (click)="agregarVentaDetalle(ventaDetalle)">Agregar</button>
 
                                 </div>
                             </div>
@@ -70,7 +71,30 @@
                             </div>
                             </div>
                         </div>
-                <button type="button" class="btn btn-outline-dark"
+
+            <table>
+
+                <thead>
+                <tr>
+
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Valor</th>
+                    <th>Valor total</th>
+
+                </thead>
+
+                <tbody>
+                <tr *ngFor='let ventaDetalle of ventaDetalles'>
+                    <td>{{ ventaDetalle.producto }}</td>
+                    <td>{{ ventaDetalle.cantidad}}</td>
+                    <td>{{ ventaDetalle.valorUnitario}}</td>
+                    <td>{{ ventaDetalle.valorUnitario*ventaDetalle.cantidad}}</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <button type="button" class="btn btn-outline-dark"
                         (click)="agregarRegistro(venta)">Guardar</button>
                 </div>
 
@@ -79,6 +103,6 @@
 
 
     </div>
-<app-ventadetalle></app-ventadetalle>
+
 
 

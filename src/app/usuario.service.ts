@@ -21,11 +21,9 @@ export class UsuarioService{
 
 
   agregarRegistro(usuarioDTO: UsuarioDTO) {
-    console.log(usuarioDTO)
-    return this.http.post<UsuarioDTO>( 'http://localhost:8080/ingweb-api/usuarios', usuarioDTO, httpOptions)/*.pipe(
-        tap((newHero: RegistroActividadDTO) => this.log(`added usuario w/ id=${newusuario.id}`)),
-        catchError(this.handleError<UsuarioDTO>('agregarRegistro'))
-    );*/.subscribe();
+    console.log(usuarioDTO);
+    return this.http.post<UsuarioDTO>( 'http://localhost:8080/ingweb-api/usuarios', usuarioDTO, httpOptions)
+        .subscribe();
   }
 
 

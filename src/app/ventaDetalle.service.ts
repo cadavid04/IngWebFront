@@ -4,6 +4,7 @@ import {Observable, of} from 'rxjs';
 import {MessageService} from './message.service';
 import {VentaDTO} from './ventaDTO';
 import {VentaDetalleDTO} from './ventaDetalleDTO';
+import {catchError, tap} from 'rxjs/operators';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -18,10 +19,11 @@ export class VentaDetalleService{
       private messageService: MessageService) { }
 
 
-  agregarRegistro(ventaDetalleDTO: VentaDetalleDTO) {
-    console.log(ventaDetalleDTO)
-    return this.http.post<VentaDetalleDTO>( 'http://localhost:8080/ingweb-api/detalleVentas', ventaDetalleDTO, httpOptions).subscribe();
+  agregarRegistro(ventaDetalleDTO: VentaDetalleDTO): Observable<any> {
+    console.log(ventaDetalleDTO);
+    return this.http.post<VentaDetalleDTO>( 'http://localhost:8080/ingweb-api/detalleVentas', ventaDetalleDTO, httpOptions);
   }
+
 
 
   private handleError<T>(operation = 'operation', result?: T) {

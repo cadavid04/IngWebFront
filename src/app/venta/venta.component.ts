@@ -6,6 +6,7 @@ import {ProductoDTO} from '../productoDTO';
 import {VentaDetalleService} from '../ventaDetalle.service';
 import {VentaDetalleDTO} from '../ventaDetalleDTO';
 
+// @ts-ignore
 @Component({
   selector: 'app-venta',
   templateUrl: './venta.component.html',
@@ -14,9 +15,10 @@ import {VentaDetalleDTO} from '../ventaDetalleDTO';
 export class VentaComponent implements OnInit {
   venta = new VentaDTO();
   ventaDetalle = new VentaDetalleDTO();
-  productoTest: string;
-  cantidadTest: string;
+  ventaDetalles: VentaDetalleDTO[];
   productos: ProductoDTO[];
+  idVenta: number;
+
 
   constructor(
       private ventaService: VentaService,
@@ -24,16 +26,25 @@ export class VentaComponent implements OnInit {
       private ventaDetalleService: VentaDetalleService) { }
 
   ngOnInit() {
-    this.getProductos()
+    this.getProductos();
   }
 
   agregarRegistro(venta: VentaDTO) {
     console.log(venta);
-    this.ventaService.agregarRegistro(venta);
+    this.ventaService.agregarRegistro(venta).
+        subscribe(ss => this.idVenta = ss);
+
   }
 
-  ingresarDetalle(ventaDetalle: VentaDetalleDTO) {
-    console.log(venta);
+  agregarVentaDetalle(ventaDetalle: VentaDetalleDTO) {
+    console.log(ventaDetalle);
+    this.ventaDetalle.idVenta = this.idVenta;
+    this.ventaDetalleService.agregarRegistro(ventaDetalle)
+        .subscribe(VentaDetalles => this.ventaDetalles = VentaDetalles);
+  }
+
+  getVentaDetalle(ventaDetalle: VentaDetalleDTO) {
+    console.log(ventaDetalle);
     this.ventaDetalleService.agregarRegistro(ventaDetalle);
   }
 
