@@ -71,10 +71,13 @@
                             </div>
                             </div>
                         </div>
+            <div class="container-fluid">
+            <div class="card-body">
+                <div class="card">
+                <div class="table-responsive">
+                <table class="table table-hover">
 
-            <table>
-
-                <thead>
+                    <thead align="center">
                 <tr>
 
                     <th>Producto</th>
@@ -86,21 +89,23 @@
 
                 <tbody>
                 <tr *ngFor='let ventaDetalle of ventaDetalles'>
-                    <td>{{ ventaDetalle.producto }}</td>
-                    <td>{{ ventaDetalle.cantidad}}</td>
-                    <td>{{ ventaDetalle.valorUnitario}}</td>
-                    <td>{{ ventaDetalle.valorUnitario*ventaDetalle.cantidad}}</td>
+                    <td align="center">{{ ventaDetalle.producto }}</td>
+                    <td align="center">{{ ventaDetalle.cantidad}}</td>
+                    <td align="center"  type="number">{{ ventaDetalle.valorUnitario}}</td>
+                    <td align="center"  type="number">{{ ventaDetalle.valorUnitario*ventaDetalle.cantidad}}</td>
                 </tr>
                 </tbody>
             </table>
-
+                </div>
+                </div>
+            </div>
             <button type="button" class="btn btn-outline-dark"
                         (click)="agregarRegistro(venta)">Guardar</button>
                 </div>
 
 
             </div>
-
+    </div>
 
     </div>
 
