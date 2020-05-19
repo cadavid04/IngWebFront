@@ -29,16 +29,26 @@ export class VentaComponent implements OnInit {
     this.getProductos();
   }
 
-  agregarRegistro(venta: VentaDTO) {
+  nuevaVenta(venta: VentaDTO) {
+    console.log(venta);
+    venta.empleado = 'aaaa';
+    if (venta.id === undefined) {
+      this.ventaService.agregarRegistro(venta).
+      subscribe(idVenta => this.venta.id = idVenta);
+    }
+  }
+
+  registrarVenta(venta: VentaDTO) {
     console.log(venta);
     this.ventaService.agregarRegistro(venta).
-        subscribe(ss => this.idVenta = ss);
+    subscribe(idVenta => this.venta.id = idVenta);
 
   }
 
+
   agregarVentaDetalle(ventaDetalle: VentaDetalleDTO) {
     console.log(ventaDetalle);
-    this.ventaDetalle.idVenta = this.idVenta;
+    this.ventaDetalle.idVenta = this.venta.id;
     this.ventaDetalleService.agregarRegistro(ventaDetalle)
         .subscribe(VentaDetalles => this.ventaDetalles = VentaDetalles);
   }

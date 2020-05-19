@@ -7,12 +7,12 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-4">
-                                <mat-form-field appearance="fill">
-                                    <input matInput placeholder="ID Venta" [(ngModel)]="venta.id"
-                                           requeried />
-                                </mat-form-field>
+                                    <button type="button" class="btn btn-outline-dark"
+
+                                            (click)="nuevaVenta(venta)">Nueva</button>
+                                    <label> Venta: # {{ venta.id }} </label>
                                 </div>
-                                <br>
+                             <br>
                                 <div class="col-md-4">
                                 <mat-form-field appearance="fill">
                                     <input matInput placeholder="ID Cliente" [(ngModel)]="venta.idCliente"
@@ -100,7 +100,7 @@
                 </div>
             </div>
             <button type="button" class="btn btn-outline-dark"
-                        (click)="agregarRegistro(venta)">Guardar</button>
+                        (click)="registrarVenta(venta)">Registrar</button>
                 </div>
 
 
