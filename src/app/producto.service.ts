@@ -27,6 +27,11 @@ export class ProductoService{
         );
   }
 
+  getProducto(nombre: string): Observable<number> {
+    return this.http.get<number>('http://localhost:8080/ingweb-api/productos/' + nombre)
+        .pipe();
+  }
+
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

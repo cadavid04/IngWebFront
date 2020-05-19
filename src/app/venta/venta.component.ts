@@ -17,8 +17,8 @@ export class VentaComponent implements OnInit {
   ventaDetalle = new VentaDetalleDTO();
   ventaDetalles: VentaDetalleDTO[];
   productos: ProductoDTO[];
-  idVenta: number;
-
+  producto: ProductoDTO;
+  valorTotal: number;
 
   constructor(
       private ventaService: VentaService,
@@ -49,9 +49,25 @@ export class VentaComponent implements OnInit {
   agregarVentaDetalle(ventaDetalle: VentaDetalleDTO) {
     console.log(ventaDetalle);
     this.ventaDetalle.idVenta = this.venta.id;
+
+
+
     this.ventaDetalleService.agregarRegistro(ventaDetalle)
         .subscribe(VentaDetalles => this.ventaDetalles = VentaDetalles);
+
+    this.ventaDetalleService.getSumaTotal(this.venta.id)
+        .subscribe(Venta => this.venta.valor = Venta);
+
+    //this.productoService.getProducto(this.ventaDetalle.producto).
+    //  subscribe(Producto => this.venta.valor = Producto);
+    //console.log(ventaDetalle.valorUnitario);
+    //console.log(ventaDetalle.cantidad);
+   // console.log(ventaDetalle.cantidad * ventaDetalle.valorUnitario);
+    //this.venta.valor = this.venta.valor + (ventaDetalle.cantidad * ventaDetalle.valorUnitario);
+    // = this.venta.valor + (1000 * this.ventaDetalle.cantidad);
+    //console.log(this.producto.precioCompra);
   }
+
 
   getVentaDetalle(ventaDetalle: VentaDetalleDTO) {
     console.log(ventaDetalle);
@@ -61,6 +77,11 @@ export class VentaComponent implements OnInit {
   getProductos(): void {
     this.productoService.getProductos()
         .subscribe(Productos => this.productos = Productos);
+  }
+
+  getProducto(nombre: string): any {
+    this.productoService.getProducto(nombre)
+        .subscribe(Producto => this.producto = Producto);
   }
 
 }
