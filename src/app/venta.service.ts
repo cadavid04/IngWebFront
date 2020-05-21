@@ -23,9 +23,15 @@ export class VentaService{
       private productoService: ProductoService) { }
 
 
-  agregarRegistro(ventaDTO: VentaDTO) {
+  nuevaVenta(ventaDTO: VentaDTO) {
     console.log(ventaDTO);
     return this.http.post<number>( 'http://localhost:8080/ingweb-api/ventas', ventaDTO, httpOptions)
+        ;
+  }
+
+  actualizarVenta(ventaDTO: VentaDTO) {
+    console.log(ventaDTO);
+    return this.http.put<number>( 'http://localhost:8080/ingweb-api/ventas', ventaDTO, httpOptions)
         ;
   }
 

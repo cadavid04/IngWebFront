@@ -31,18 +31,17 @@ export class VentaComponent implements OnInit {
 
   nuevaVenta(venta: VentaDTO) {
     console.log(venta);
-    venta.empleado = 'aaaa';
+    venta.empleado = 'Bryan';
     if (venta.id === undefined) {
-      this.ventaService.agregarRegistro(venta).
+      this.ventaService.nuevaVenta(venta).
       subscribe(idVenta => this.venta.id = idVenta);
     }
   }
 
-  registrarVenta(venta: VentaDTO) {
+    registrarVenta(venta: VentaDTO) {
     console.log(venta);
-    this.ventaService.agregarRegistro(venta).
-    subscribe(idVenta => this.venta.id = idVenta);
-
+    this.ventaService.actualizarVenta(venta).subscribe(idVenta => this.venta.id = idVenta);
+    location.reload();
   }
 
 
@@ -55,17 +54,21 @@ export class VentaComponent implements OnInit {
     this.ventaDetalleService.agregarRegistro(ventaDetalle)
         .subscribe(VentaDetalles => this.ventaDetalles = VentaDetalles);
 
-    this.ventaDetalleService.getSumaTotal(this.venta.id)
-        .subscribe(Venta => this.venta.valor = Venta);
 
-    //this.productoService.getProducto(this.ventaDetalle.producto).
+   // this.ventaDetalles.forEach((asd => this.venta.valor = this.venta.valor + (asd.valorUnitario * asd.cantidad)));
+
+
+    /*this.ventaDetalleService.getSumaTotal(this.venta.id)
+        .subscribe(Venta => this.venta.valor = Venta);*/
+
+    // this.productoService.getProducto(this.ventaDetalle.producto).
     //  subscribe(Producto => this.venta.valor = Producto);
-    //console.log(ventaDetalle.valorUnitario);
-    //console.log(ventaDetalle.cantidad);
+    // console.log(ventaDetalle.valorUnitario);
+    // console.log(ventaDetalle.cantidad);
    // console.log(ventaDetalle.cantidad * ventaDetalle.valorUnitario);
-    //this.venta.valor = this.venta.valor + (ventaDetalle.cantidad * ventaDetalle.valorUnitario);
+    // this.venta.valor = this.venta.valor + (ventaDetalle.cantidad * ventaDetalle.valorUnitario);
     // = this.venta.valor + (1000 * this.ventaDetalle.cantidad);
-    //console.log(this.producto.precioCompra);
+    // console.log(this.producto.precioCompra);
   }
 
 
@@ -79,10 +82,10 @@ export class VentaComponent implements OnInit {
         .subscribe(Productos => this.productos = Productos);
   }
 
-  getProducto(nombre: string): any {
+  /*getProducto(nombre: string): any {
     this.productoService.getProducto(nombre)
         .subscribe(Producto => this.producto = Producto);
-  }
+  }*/
 
 }
 
