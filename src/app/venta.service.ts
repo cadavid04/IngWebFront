@@ -43,11 +43,6 @@ export class VentaService{
         );
   }
 
-  getProductos(): void {
-    this.productoService.getProductos()
-        .subscribe(Productos => this.productos = Productos);
-  }
-
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 

@@ -4,6 +4,55 @@
             <div class="card">
 
                 <Label> COMPONENTE PARA GESTIÓN DE REPORTES</Label>
+
+                <mat-form-field appearance="standard">
+                    <input matInput placeholder="Fecha" type="date" [(ngModel)]="this.fechaInicial"
+                           requeried />
+                </mat-form-field>
+
+                <mat-form-field appearance="standard">
+                    <input matInput placeholder="Fecha" type="date" [(ngModel)]="this.fechaFinal"
+                           requeried />
+                </mat-form-field>
+
+
+                <div class="container-fluid">
+                    <div class="card-body">
+                        <div class="card">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+
+                                    <thead align="center">
+                                    <tr>
+
+                                        <th>Fecha</th>
+                                        <th>Venta #</th>
+                                        <th>Cliente</th>
+                                        <th>Empleado</th>
+                                        <th>Total Venta</th>
+
+                                    </thead>
+
+                                    <tbody>
+                                    <tr *ngFor='let reporteDTO of reportes'>
+                                        <td align="center">{{ reporteDTO.fechaVenta }}</td>
+                                        <td align="center">{{ reporteDTO.numeroVenta}}</td>
+                                        <td align="center">{{ reporteDTO.cliente}}</td>
+                                        <td align="center">{{ reporteDTO.empleado}}</td>
+                                        <td align="center">{{ reporteDTO.valorTotal}}</td>
+                                    </tr>
+
+                                    <div class="card-body" align="center">
+                                        <div class="card" align="center">
+                                            <h2 align="center" > {{venta.valor}}  </h2>
+                                        </div>
+                                    </div>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
