@@ -23,9 +23,15 @@ export class VentaService{
       private productoService: ProductoService) { }
 
 
-  agregarRegistro(ventaDTO: VentaDTO) {
+  nuevaVenta(ventaDTO: VentaDTO) {
     console.log(ventaDTO);
     return this.http.post<number>( 'http://localhost:8080/ingweb-api/ventas', ventaDTO, httpOptions)
+        ;
+  }
+
+  actualizarVenta(ventaDTO: VentaDTO) {
+    console.log(ventaDTO);
+    return this.http.put<number>( 'http://localhost:8080/ingweb-api/ventas', ventaDTO, httpOptions)
         ;
   }
 
@@ -35,11 +41,6 @@ export class VentaService{
             tap(_ => this.log('fetched ventaDetalle')),
             catchError(this.handleError<VentaDetalleDTO[]>('getVentaDetalles', []))
         );
-  }
-
-  getProductos(): void {
-    this.productoService.getProductos()
-        .subscribe(Productos => this.productos = Productos);
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

@@ -2,17 +2,20 @@
     <div class="container-fluid">
         <div class="col-md-12">
                 <div class="card">
-
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Ventas</h4>
+                        <p class="card-category">Registro de Ventas</p>
+                    </div>
                     <div class="card-body">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-4">
-                                <mat-form-field appearance="fill">
-                                    <input matInput placeholder="ID Venta" [(ngModel)]="venta.id"
-                                           requeried />
-                                </mat-form-field>
+                                    <button type="button" class="btn btn-outline-dark"
+
+                                            (click)="nuevaVenta(venta)">Nueva</button>
+                                    <label> Venta: # {{ venta.id }} </label>
                                 </div>
-                                <br>
+                             <br>
                                 <div class="col-md-4">
                                 <mat-form-field appearance="fill">
                                     <input matInput placeholder="ID Cliente" [(ngModel)]="venta.idCliente"
@@ -64,12 +67,6 @@
 
                                 </div>
                             </div>
-                                <mat-form-field appearance="fill">
-                                    <input matInput placeholder="Valor" [(ngModel)]="venta.valor"
-                                           requeried />
-                                </mat-form-field>
-                            </div>
-                            </div>
                         </div>
             <div class="container-fluid">
             <div class="card-body">
@@ -94,13 +91,19 @@
                     <td align="center"  type="number">{{ ventaDetalle.valorUnitario}}</td>
                     <td align="center"  type="number">{{ ventaDetalle.valorUnitario*ventaDetalle.cantidad}}</td>
                 </tr>
+
+                <div class="card-body" align="center">
+                    <div class="card" align="center">
+                            <h2 align="center" > {{venta.valor}}  </h2>
+                   </div>
+                </div>
                 </tbody>
             </table>
                 </div>
                 </div>
             </div>
             <button type="button" class="btn btn-outline-dark"
-                        (click)="agregarRegistro(venta)">Guardar</button>
+                        (click)="registrarVenta(venta)">Registrar</button>
                 </div>
 
 

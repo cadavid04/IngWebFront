@@ -25,6 +25,12 @@ export class VentaDetalleService{
   }
 
 
+  getSumaTotal(idVenta: number): Observable<number> {
+    return this.http.get<number>('http://localhost:8080/ingweb-api/detalleVentas/' + idVenta)
+        .pipe();
+  }
+
+
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

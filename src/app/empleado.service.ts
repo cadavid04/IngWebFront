@@ -14,7 +14,7 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class EmpleadoService{
+export class EmpleadoService {
   constructor(
       private http: HttpClient,
       private messageService: MessageService) { }
