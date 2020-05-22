@@ -1,6 +1,6 @@
 export class ReporteDTO {
-    fechaVenta: string;
-    numeroVenta: string;
+    fecha: Date;
+    venta: number;
     valorTotal: string;
     empleado: string;
     cliente: string;

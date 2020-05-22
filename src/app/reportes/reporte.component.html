@@ -2,20 +2,26 @@
     <div class="container-fluid">
         <div class="col-md-12">
             <div class="card">
+                <div class="card-header card-header-danger">
+                    <h4 class="card-title">Ventas</h4>
+                    <p class="card-category">Reporte de Ventas</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-body">
+                        <mat-form-field appearance="standard">
+                            <input matInput placeholder="Fecha" type="date" [(ngModel)]="this.fechaInicial"
+                                   requeried />
+                        </mat-form-field>
 
-                <Label> COMPONENTE PARA GESTIÓN DE REPORTES</Label>
+                        <mat-form-field appearance="standard">
+                            <input matInput placeholder="Fecha" type="date" [(ngModel)]="this.fechaFinal"
+                                   requeried />
+                        </mat-form-field>
+                        <button type="button" class="btn btn-outline-dark"
 
-                <mat-form-field appearance="standard">
-                    <input matInput placeholder="Fecha" type="date" [(ngModel)]="this.fechaInicial"
-                           requeried />
-                </mat-form-field>
-
-                <mat-form-field appearance="standard">
-                    <input matInput placeholder="Fecha" type="date" [(ngModel)]="this.fechaFinal"
-                           requeried />
-                </mat-form-field>
-
-
+                                (click)="getReporteVentaPorFechas()">Generar</button>
+                    </div>
+                </div>
                 <div class="container-fluid">
                     <div class="card-body">
                         <div class="card">
@@ -35,18 +41,12 @@
 
                                     <tbody>
                                     <tr *ngFor='let reporteDTO of reportes'>
-                                        <td align="center">{{ reporteDTO.fechaVenta }}</td>
-                                        <td align="center">{{ reporteDTO.numeroVenta}}</td>
+                                        <td align="center">{{ reporteDTO.fecha}}</td>
+                                        <td align="center">{{ reporteDTO.venta}}</td>
                                         <td align="center">{{ reporteDTO.cliente}}</td>
                                         <td align="center">{{ reporteDTO.empleado}}</td>
                                         <td align="center">{{ reporteDTO.valorTotal}}</td>
                                     </tr>
-
-                                    <div class="card-body" align="center">
-                                        <div class="card" align="center">
-                                            <h2 align="center" > {{venta.valor}}  </h2>
-                                        </div>
-                                    </div>
                                     </tbody>
                                 </table>
                             </div>

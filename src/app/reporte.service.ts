@@ -18,7 +18,8 @@ export class ReporteService {
 ) { }
 
     getReporteVentaPorFechas(fechaInicial: Date, fechaFinal: Date): Observable<ReporteDTO[]> {
-        return this.http.get<ReporteDTO[]>('http://localhost:8080/ingweb-api/reportes/VentasPorFechas?' + fechaInicial + '?' + fechaFinal)
+        return this.http.get<ReporteDTO[]>
+        ('http://localhost:8080/ingweb-api/reportes/VentasPorFechas?fechaInicial=' + fechaInicial + '&fechaFinal=' + fechaFinal)
             .pipe();
     }
 
